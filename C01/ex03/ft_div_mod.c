@@ -9,11 +9,11 @@
 /*   Updated: 2022/09/27 15:08:18 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 //#include <stdio.h>
 
-void ft_div_mod(int a, int b, int *div, int *mod)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	
 	*div = a / b;
 	*mod = a % b;
 }

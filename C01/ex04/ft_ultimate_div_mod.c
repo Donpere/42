@@ -9,12 +9,13 @@
 /*   Updated: 2022/09/27 15:09:44 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
-void ft_ultimate_div_mod(int *a, int *b)
+//#include <stdio.h>
+
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	int tmp_a;
-	int tmp_b;
+	int	tmp_a;
+	int	tmp_b;
 
 	tmp_a = *a / *b;
 	tmp_b = *a % *b;
@@ -22,7 +23,7 @@ void ft_ultimate_div_mod(int *a, int *b)
 	*b = tmp_b;
 }
 
-int main()
+/*int main()
 {
 	int a = 9;
 	int b = 2;
@@ -33,4 +34,4 @@ int main()
 	printf("%d, %d \n", a, b);
 
 	return 0;
-}
+}*/

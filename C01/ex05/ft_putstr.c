@@ -9,29 +9,30 @@
 /*   Updated: 2022/09/27 15:10:42 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 //#include <unistd.h>
 //#include <stdio.h>
 
-void    ft_putchar(char c)
+void	ft_putchar(char c)
 {
-    write(1, &c, 1);
+	write(1, &c, 1);
 }
 
-void    ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
-    int i;
-    i = 0;
+	int	i;
 
-    while (str[i] != '\0')
-    {
-        ft_putchar(str[i]);
-        i++;
-    }
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }
 
 /*int main()
 {
-    char    str[] = "Mon string";
-    ft_putstr(str);
-    return 0;
+	char    str[] = "Mon string";
+	ft_putstr(str);
+	return 0;
 }*/

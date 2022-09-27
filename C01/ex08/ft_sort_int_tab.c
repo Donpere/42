@@ -9,30 +9,29 @@
 /*   Updated: 2022/09/27 15:13:54 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 //#include <stdio.h>
 
-void ft_rev_int_tab(int *tab, int size)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	int tmp;
-	int i;
-	int j;
+	int	tmp;
+	int	i;
+	int	j;
 
 	j = 0;
-
-	while (j < size-1)
+	while (j < size -1)
 	{
 	i = 0;
-
-	while (i < size - 1)
+		while (i < size - 1)
 		{
-		if (tab[i]>tab[i+1])
+			if (tab[i] > tab[i +1])
 			{
 			tmp = tab[i];
-			tab[i] = tab[i+1];
-			tab[i+1] = tmp; 
+			tab[i] = tab[i +1];
+			tab[i +1] = tmp;
 			i++;
 			}
-		else
+			else
 		i++;
 		}
 	j++;

@@ -9,21 +9,21 @@
 /*   Updated: 2022/09/27 15:13:05 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 //#include <stdio.h>
 
-void ft_rev_int_tab(int *tab, int size)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	int tmp;
-	int i;
+	int	tmp;
+	int	i;
 
 	i = 0;
 	size = size - 1;
-
 	while (i < size)
 	{
 		tmp = tab[size];
 		tab[size] = tab[i];
-		tab[i] = tmp; 
+		tab[i] = tmp;
 		i++;
 		size--;
 	}

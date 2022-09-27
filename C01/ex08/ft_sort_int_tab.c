@@ -16,24 +16,34 @@ void ft_rev_int_tab(int *tab, int size)
 {
 	int tmp;
 	int i;
+	int j;
 
-	i = 0;
-	size = size - 1;
+	j = 0;
 
-	while (i < size)
+	while (j < size-1)
 	{
-		tmp = tab[size];
-		tab[size] = tab[i];
-		tab[i] = tmp; 
+	i = 0;
+
+	while (i < size - 1)
+		{
+		if (tab[i]>tab[i+1])
+			{
+			tmp = tab[i];
+			tab[i] = tab[i+1];
+			tab[i+1] = tmp; 
+			i++;
+			}
+		else
 		i++;
-		size--;
+		}
+	j++;
 	}
 }
 
 int main()
 {
-	int    array[5] = {8, 4, 9, 3, 1};
-	int big = 5;
+	int    array[12] = {143, 67, 34, 23, 9, 8, 7, 4, 4, 3, 3, 1};
+	int big = 12;
 	int i = 0 - 1;
 
 	while (++i < big)

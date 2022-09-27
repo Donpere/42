@@ -9,8 +9,7 @@
 /*   Updated: 2022/09/27 15:13:05 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
+//#include <stdio.h>
 
 void ft_rev_int_tab(int *tab, int size)
 {
@@ -30,7 +29,7 @@ void ft_rev_int_tab(int *tab, int size)
 	}
 }
 
-int main()
+/*int main()
 {
 	int    array[5] = {8, 4, 9, 3, 1};
 	int big = 5;
@@ -50,4 +49,4 @@ int main()
 			printf("%d", array[i]);
 
 	return 0;
-}
+}*/

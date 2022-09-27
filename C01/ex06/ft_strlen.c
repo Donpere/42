@@ -9,9 +9,7 @@
 /*   Updated: 2022/09/27 15:11:45 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-#include <stdio.h>
+//#include <stdio.h>
 
 int ft_strlen(char *str)
 {
@@ -25,11 +23,11 @@ int ft_strlen(char *str)
     return (i);
 }
 
-int main()
+/*int main()
 {
     int y = 0;
     char    str[] = "lalala";
     y = ft_strlen(str);
     printf("%d", y);
     return 0;
-}
+}*/

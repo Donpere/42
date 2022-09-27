@@ -9,9 +9,8 @@
 /*   Updated: 2022/09/27 15:10:42 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-#include <stdio.h>
+//#include <unistd.h>
+//#include <stdio.h>
 
 void    ft_putchar(char c)
 {
@@ -30,9 +29,9 @@ void    ft_putstr(char *str)
     }
 }
 
-int main()
+/*int main()
 {
     char    str[] = "Mon string";
     ft_putstr(str);
     return 0;
-}
+}*/

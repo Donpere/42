@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
+//#include <stdio.h>
 
 void ft_swap(int *a, int *b)
 {
@@ -22,10 +21,10 @@ void ft_swap(int *a, int *b)
 	*b = tmp;
 }
 
-int main()
+/*int main()
 {
 	int a = 3;
-	int b = 9;
+	int b = -9;
 
 	printf("%d, %d \n", a, b);
 
@@ -33,4 +32,4 @@ int main()
 	printf("%d, %d \n", a, b);
 
 	return 0;
-}
+}*/

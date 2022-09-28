@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 
 void	ft_sort_int_tab(int *tab, int size)
 {
@@ -38,7 +38,7 @@ void	ft_sort_int_tab(int *tab, int size)
 	}
 }
 
-/*int main()
+int main()
 {
 	int    array[12] = {111, 77, 44, 33, 9, -8, 6, -5, 0, 2};
 	int big = 10;
@@ -50,7 +50,7 @@ void	ft_sort_int_tab(int *tab, int size)
 	}
 			printf("\n");
 
-	ft_sort_int_tab((array, big);
+	ft_sort_int_tab(array, big);
 
 	i = 0 - 1;
 
@@ -58,4 +58,4 @@ void	ft_sort_int_tab(int *tab, int size)
 			printf("%d", array[i]);
 
 	return 0;
-}*/
+}

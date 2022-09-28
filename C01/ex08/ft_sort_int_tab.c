@@ -12,7 +12,7 @@
 
 //#include <stdio.h>
 
-void	ft_rev_int_tab(int *tab, int size)
+void	ft_sort_int_tab(int *tab, int size)
 {
 	int	tmp;
 	int	i;
@@ -50,7 +50,7 @@ void	ft_rev_int_tab(int *tab, int size)
 	}
 			printf("\n");
 
-	ft_rev_int_tab(array, big);
+	ft_sort_int_tab((array, big);
 
 	i = 0 - 1;
 

@@ -28,10 +28,10 @@ i = 0;
 	return (str);
 }
 
-/*int	main ()
+int	main ()
 {
 	char string[] = "sALutZ";
 	ft_strlowcase(string);
 	printf("%s \n", string);
 	return (0);
-}*/
+}

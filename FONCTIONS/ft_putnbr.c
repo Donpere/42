@@ -19,20 +19,24 @@ void ft_putstr(char *str)
 }
 
 void ft_putnbr(int nb)
-{
-    if (i < 0)
-        nb = - nb;
+{unsigned int n = nb;
+    if (nb < 0)
+        {ft_putchar('-');
+         nb = -n;
+         ft_putnbr(nb);
+        }
 
-    else if (i >= 10)
-        ft_putnbr(nb / 10);
+    else if (nb >= 10)
+        {ft_putnbr(nb / 10);
         ft_putnbr(nb % 10);
+        }
 
     else
-        ft_putchar(nb);
+        ft_putchar(nb + '0');
 }
 
 int main()
 {
-    ft_putnbr(18);
+    ft_putnbr(-49834);
     return (0);
 }

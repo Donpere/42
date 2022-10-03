@@ -1,58 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr2.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: domarion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 09:27:31 by domarion          #+#    #+#             */
-/*   Updated: 2022/10/03 09:27:41 by domarion         ###   ########.fr       */
+/*   Created: 2022/10/03 15:10:07 by domarion          #+#    #+#             */
+/*   Updated: 2022/10/03 15:10:21 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
+int	ft_strlen(char *string)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
-	{
-		ft_putchar(str[i]);
+	while (string[i])
 		i++;
-	}
+	return (i);
 }
 
-void	ft_putnbr(int nb)
+char	*ft_strcat(char *dest, char *src)
 {
-	unsigned int	n;
+	int	i;
+	int	dest_len;
 
-n = nb;
-	if (nb < 0)
+	i = 0;
+	dest_len = ft_strlen(dest);
+	while (src[i] != '\0')
 	{
-		nb = -n;
-		ft_putchar('-');
-		ft_putnbr(nb);
+			dest[dest_len + i] = src[i];
+			i++;
 	}
-	else if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else
-	{
-		ft_putchar(nb + '0');
-	}
+	dest[dest_len + i] = '\0';
+	return (dest);
 }
 
-int	main()
-{
-	ft_putnbr(-45);
-	return (0);
-}
+// int main (void)
+// {
+// 	char str1[] = "tatito";
+// 	char str2[] = "BLA";
+// 	ft_strcat(str2, str1);
+// 	printf("%s \n", str2);
+// 	return (0);
+// }

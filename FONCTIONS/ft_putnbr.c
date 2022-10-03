@@ -15,12 +15,15 @@ void ft_putstr(char *str)
         ft_putchar(str[i]);
         i++;
         }
-
 }
 
 void ft_putnbr(int nb)
 {unsigned int n = nb;
-    if (nb < 0)
+    if (nb == -2147483648)
+        write(1, "-2147483648", 11);
+    
+    
+    else if (nb < 0)
         {ft_putchar('-');
          nb = -n;
          ft_putnbr(nb);
@@ -32,11 +35,11 @@ void ft_putnbr(int nb)
         }
 
     else
-        ft_putchar(nb + '0');
+        ft_putchar(nb + 48);
 }
 
 int main()
 {
-    ft_putnbr(-49834);
+    ft_putnbr(1649);
     return (0);
 }

@@ -1,52 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: domarion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 15:12:54 by domarion          #+#    #+#             */
-/*   Updated: 2022/09/27 15:13:05 by domarion         ###   ########.fr       */
+/*   Created: 2022/10/05 15:25:03 by domarion          #+#    #+#             */
+/*   Updated: 2022/10/05 15:25:19 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	ft_rev_int_tab(int *tab, int size)
+int	ft_atoi(char *str)
 {
-	int	tmp;
 	int	i;
+	int	sign;
+	int	resultat;
 
 	i = 0;
-	size = size - 1;
-	while (i < size)
-	{
-		tmp = tab[size];
-		tab[size] = tab[i];
-		tab[i] = tmp;
+	sign = 1;
+	resultat = 0;
+	while (str[i] == 32 && (str[i] >= 9 || str[i] <= 13))
 		i++;
-		size--;
+	while (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
 	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		resultat = resultat * 10 + str[i] - '0';
+		i++;
+	}
+	return (resultat * sign);
 }
 
-/*int main()
-{
-	int    array[5] = {8, 4, 9, 3, 1};
-	int big = 5;
-	int i = 0 - 1;
-
-	while (++i < big)
-	{
-			printf("%d", array[i]);
-	}
-			printf("\n");
-
-	ft_rev_int_tab(array, big);
-
-	i = 0 - 1;
-
-	while (++i < big)
-			printf("%d", array[i]);
-
-	return 0;
-}*/
+// int main(int argc, char **argv)
+// {
+//     if (argc == 2)
+//         printf("%d", ft_atoi(argv[1]));
+//     return (0);
+// }

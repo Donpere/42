@@ -17,18 +17,6 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
-}
-
 void	ft_putnbr(int nb)
 {
 	if (nb == -2147483648)
@@ -50,7 +38,6 @@ void	ft_putnbr(int nb)
 
 // int	main()
 // {
-// 	ft_putnbr(46750);
+// 	ft_putnbr(-2147483647);
 // 	return (0);
-
 // }

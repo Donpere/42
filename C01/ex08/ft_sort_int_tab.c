@@ -38,24 +38,24 @@ void	ft_sort_int_tab(int *tab, int size)
 	}
 }
 
-int main()
-{
-	int    array[12] = {111, 77, 44, 33, 9, -8, 6, -5, 0, 2};
-	int big = 10;
-	int i = 0 - 1;
+// int main()
+// {
+// 	int    array[12] = {111, 77, 44, 33, 9, -8, 6, -5, 0, 2};
+// 	int big = 10;
+// 	int i = 0 - 1;
 
-	while (++i < big)
-	{
-			printf("%d", array[i]);
-	}
-			printf("\n");
+// 	while (++i < big)
+// 	{
+// 			printf("%d", array[i]);
+// 	}
+// 			printf("\n");
 
-	ft_sort_int_tab(array, big);
+// 	ft_sort_int_tab(array, big);
 
-	i = 0 - 1;
+// 	i = 0 - 1;
 
-	while (++i < big)
-			printf("%d", array[i]);
+// 	while (++i < big)
+// 			printf("%d", array[i]);
 
-	return 0;
-}
+// 	return 0;
+// }

@@ -12,11 +12,13 @@
 
 #include <stdio.h>
 
+//attention a mettre long pour resultat pour eviter le probleme du - max
+
 int	ft_atoi(char *str)
 {
 	int	i;
 	int	sign;
-	int	resultat;
+	long	resultat;
 
 	i = 0;
 	sign = 1;
@@ -37,9 +39,9 @@ int	ft_atoi(char *str)
 	return (resultat * sign);
 }
 
-// int main(int argc, char **argv)
-// {
-//     if (argc == 2)
-//         printf("%d", ft_atoi(argv[1]));
-//     return (0);
-// }
+int main(int argc, char **argv)
+{
+    if (argc == 2)
+        printf("%d", ft_atoi(argv[1]));
+    return (0);
+}

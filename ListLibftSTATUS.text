@@ -1,9 +1,11 @@
 DONE : ft_isalpha 
 DONE : ft_isdigit
 DONE : ft_isalnum
+DONE : ft_isascii
 
-ft_isascii
-ft_isprint
+IN PROGRESS : ft_isprint
+
+COMING :
 ft_strlen
 ft_memset
 ft_bzero

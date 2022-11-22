@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: domarion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 12:08:53 by domarion          #+#    #+#             */
-/*   Updated: 2022/11/15 12:09:00 by domarion         ###   ########.fr       */
+/*   Created: 2022/11/20 12:05:06 by domarion          #+#    #+#             */
+/*   Updated: 2022/11/20 12:05:13 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
+#include <strings.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-// int ft_isascii(int c);
+// void ft_bzero(void *s, size_t n);
 
 // int main()
 // {
-//     x = '6';
-//     y = 0;
 
-//     y = isascii(x);
-//     printf("isascii %d", y);
 
-//     y = ft_isascii(x);
-//     printf("isascii %d", y);
-    
-//     return (0);
+// 	return (0);
 // }
 
-int ft_isascii(int c)
+void ft_bzero(void *s, size_t n)
 {
-if ((c >= 0 && c <= 127))
-	return 1;
-
-else
-	return 0;
+	char *set = s;
+	size_t i;
+	i = 0;
+	while (i < n)
+	{
+		set[i] = 0;
+		i++;
+	}
+	
 }

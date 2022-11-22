@@ -1,39 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: domarion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 10:41:16 by domarion          #+#    #+#             */
-/*   Updated: 2022/11/08 10:41:34 by domarion         ###   ########.fr       */
+/*   Created: 2022/11/16 18:11:30 by domarion          #+#    #+#             */
+/*   Updated: 2022/11/16 18:11:35 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
+#define couleur(param) printf("\033[%sm",param)
 
-// int ft_isalpha(int c);
+// size_t ft_strlen(const char *s);
 
 // int main ()
 // {
-//     int x = 97;
-//     int y = 0 ;
+// 	char *str = "Sqlut";
+// 	int y = 0;
 
-//     y = ft_isalpha(x);
-//     printf ("ft_isalpha %d \n", y);
+// 		couleur("91");
+// 	y = strlen(str);
+// 	printf("strlen    : %d\n", y);
+// 		couleur("0");
+// 	y = ft_strlen(str);
+// 	printf("ft_strlen : %d\n", y);
+// 	printf("\n");
 
-//     y = isalpha(x);
-//     printf ("isalpha %d \n", y);
-//     return 0;
+// 	printf("\n");
+
+// 	return (0);
 // }
 
-int ft_isalpha(int c)
+size_t ft_strlen(const char *s)
 {
-if ((c > 64 && c < 91) || (c > 96 && c < 123))
-	return 1;
+	int i = 0;
+	while (s[i] != '\0')
+		{
+			i++;
+		}
 
-else
-	return 0;
+		return i;
+
 }

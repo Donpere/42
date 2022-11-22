@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: domarion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 12:08:53 by domarion          #+#    #+#             */
-/*   Updated: 2022/11/15 12:09:00 by domarion         ###   ########.fr       */
+/*   Created: 2022/11/22 11:08:30 by domarion          #+#    #+#             */
+/*   Updated: 2022/11/22 11:08:40 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
+#include <stdlib.h> //lib pour avoiir malloc
 #include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include "libft.h"
+#define couleur(param) printf("\033[%sm",param)
 
-// int ft_isascii(int c);
-
-// int main()
-// {
-//     x = '6';
-//     y = 0;
-
-//     y = isascii(x);
-//     printf("isascii %d", y);
-
-//     y = ft_isascii(x);
-//     printf("isascii %d", y);
-    
-//     return (0);
-// }
-
-int ft_isascii(int c)
+int main()
 {
-if ((c >= 0 && c <= 127))
-	return 1;
 
-else
-	return 0;
+
+	return (0);
 }

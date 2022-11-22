@@ -3,45 +3,40 @@
 #include <string.h>
 #include <stdbool.h>
 
-/**
- * Auto-generated code below aims at helping you parse
- * the standard input according to the problem statement.
- **/
 
 int main()
 {
-    // the number of temperatures to analyse
-    int n;
-    printf("Nombre valeurs : ");
-    scanf("%d", &n);
-    printf("\n");
+	int n;
+	scanf("%d", &n);
 
+	int tab[n];
+	for (int i = 0; i < n; i++) 
+	{
+		int t;
+		scanf("%d", &t);
+		tab[i] = t;
+	}
 
-    int tab[n];
-    for (int i = 0; i < n; i++) 
-    {
-        // a temperature expressed as an integer ranging from -273 to 5526
-        int t;
-        printf("Entrer temp %d : \n", tab[i]);
-        scanf("%d", &t);
-        tab[i] = t;
-    }
-    printf("\n");
+	if (n < 1)
+	{
+		printf("0\n");
+		return 0;
+	}
 
-    for (int i = 0; i < n; i++) 
-    {
-        printf(" %d ", tab[i]);
-    }
+	int result = tab[0];
 
-    int tmporer = 0;
+	for (int i = 0; i < (n - 1); i++)
+	{
+		if (abs (tab[i]) < abs (result))
+			{
+				result = tab[i];
+			}
 
-    printf("\n");
-    printf("\n");
+		else if ((tab[i] * -1) == result)
+			result = abs (result);
+	}
 
-    // Write an answer using printf(). DON'T FORGET THE TRAILING \n
-    // To debug: fprintf(stderr, "Debug messages...\n");
+	printf("%d\n", result);
 
-    printf("result\n");
-
-    return 0;
+	return 0;
 }

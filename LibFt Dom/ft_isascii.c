@@ -12,6 +12,7 @@
 
 #include <ctype.h>
 #include <stdio.h>
+#include "libft.h"
 
 // int ft_isascii(int c);
 
@@ -24,16 +25,14 @@
 //     printf("isascii %d", y);
 
 //     y = ft_isascii(x);
-//     printf("isascii %d", y);
-    
+//     printf("isascii %d", y); 
 //     return (0);
 // }
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-if ((c >= 0 && c <= 127))
-	return 1;
-
-else
-	return 0;
+	if ((c >= 0 && c <= 127))
+		return (1);
+	else
+		return (0);
 }

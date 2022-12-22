@@ -15,11 +15,20 @@
 #include <ctype.h>
 #include <string.h>
 #include "libft.h"
-#define couleur(param) printf("\033[%sm",param)
 
-int main()
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
+	char	*search;
+	char	*destination;
+	size_t	i;
 
-
-	return (0);
+	i = 0;
+	search = (char *)src;
+	destination = (char *)dest;
+	while (i < n)
+	{
+	destination[i] = search[i];
+	i++;
+	}
+	return (destination);
 }

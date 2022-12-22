@@ -25,15 +25,13 @@
 
 //     y = ft_isprint(x);
 //     printf("isascii %d", y);
-    
 //     return (0);
 // }
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    if ((c >= 32 &&  c<= 126))
-	return 1;
-
-else
-	return 0;
+	if ((c >= 32 && c <= 126))
+		return (1);
+	else
+		return (0);
 }

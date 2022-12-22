@@ -14,24 +14,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// void ft_bzero(void *s, size_t n);
-
-// int main()
-// {
-
-
-// 	return (0);
-// }
-
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	char *set = s;
-	size_t i;
-	i = 0;
+	char	*set;
+	size_t	i;
+
+i = 0;
+	set = s;
 	while (i < n)
 	{
 		set[i] = 0;
 		i++;
 	}
-	
 }

@@ -27,7 +27,7 @@ int main(void)
 
 ////////////////////////////////////////////////
 
-	printf("1 - cft_isalpha\n");
+	printf("01 - cft_isalpha\n");
 	printf("**********\n");
 
 		couleur("91");
@@ -40,7 +40,7 @@ int main(void)
 
 ////////////////////////////////////////////////
 
-	printf("2 - ft_isdigit\n");
+	printf("02 - ft_isdigit\n");
 	printf("**********\n");
 
 		couleur("91");
@@ -53,7 +53,7 @@ int main(void)
 
 ////////////////////////////////////////////////
 
-	printf("3 - ft_isalnum\n");
+	printf("03 - ft_isalnum\n");
 	printf("**********\n");
 
 		couleur("91");
@@ -66,7 +66,7 @@ int main(void)
 	
 ////////////////////////////////////////////////
 
-	printf("4 - ft_isascii\n");
+	printf("04 - ft_isascii\n");
 	printf("**********\n");
 
 		couleur("91");
@@ -79,7 +79,7 @@ int main(void)
 
 ////////////////////////////////////////////////
 
-	printf("5 - ft_isprint\n");
+	printf("05 - ft_isprint\n");
 	printf("**********\n");
 
 		couleur("91");
@@ -92,7 +92,7 @@ int main(void)
 
 ////////////////////////////////////////////////
 
-	printf("6 - ft_strlen\n");
+	printf("06 - ft_strlen\n");
 	printf("**********\n");
 
 		couleur("91");
@@ -105,7 +105,7 @@ int main(void)
 	
 ////////////////////////////////////////////////
 
-	printf("7 - ft_memset\n");
+	printf("07 - ft_memset\n");
 	printf("**********\n");
 
 	
@@ -161,7 +161,7 @@ int main(void)
 	
 ////////////////////////////////////////////////
 
-	printf("8 - ft_bzero\n");
+	printf("08 - ft_bzero\n");
 	printf("**********\n");
 //void bzero(void *s, size_t n);
 
@@ -240,15 +240,83 @@ printf("ft_bzero : ");
 
 
 	free(str); ///////// free fait
+		printf("\n");
+
 
 ////////////////////////////////////////////////
 
-// void *ft_memcpy(void *dest, const void *src, size_t n);
+	printf("09 - ft_memcpy\n");
+	printf("**********\n");
+
+//void *ft_memcpy(void *dest, const void *src, size_t n);
+
+	size_t cases_memcpy = 4;
+	char tab_go [8] = {'c', 'e', 'b', 'o', 'u', 't', 'e'};
+	i = 0;
+
+	char *tab_back = malloc (cases_memcpy * sizeof(char ));
+
+///////////////////////////////////////////
+		couleur("91");
+
+		memcpy(tab_back, tab_go, cases_memcpy);
+
+while (i < 8)
+	{
+		printf("%c",tab_go[i]);
+		i++;
+	}
+		printf("\n");
+		printf("\n");
+
+i = 0;
+while (i < 8)
+	{
+		printf("%c",tab_back[i]);
+			i++;
+	}
+		printf("\n");
+printf("%p", tab_go);
+		printf("\n");
+printf("%p", tab_back);
+//////////////////////////////////////
+		couleur("0");
+
+	ft_memcpy(tab_back, tab_go, cases_memcpy);
+
+while (i < 8)
+	{
+		printf("%c",tab_go[i]);
+		i++;
+	}
+		printf("\n");
+		printf("\n");
+
+i = 0;
+while (i < 8)
+	{
+		printf("%c",tab_back[i]);
+			i++;
+	}
+		printf("\n");
+printf("%p", tab_go);
+		printf("\n");
+printf("%p", tab_back);
+
+free(tab_back);
 
 ////////////////////////////////////////////////
 
+	printf("10 - ft_memmove\n");
+	printf("**********\n");
+
+//void *ft_memmove(void *dest, const void *src, size_t n);
+	cases_memcpy = 4;
+		tab_go [3] = 'r'; //= {'c', 'e', 'b', 'o', 'u', 't', 'e'};
+
 ////////////////////////////////////////////////
 
+// 
 
 	printf("\n");
 

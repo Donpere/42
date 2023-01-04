@@ -14,7 +14,7 @@ t_List *emptyList(void);
 int isEmptyList(t_List *);
 
 // calcul taille de la liste
-long lenList(t_List *);
+long nbElement(t_List *);
 
 // Ajouter cellule a une position donnee
 t_List *addAt(t_List *, int, int);

@@ -13,32 +13,38 @@ static t_List *createCell(int data)
 	return cell;
 }
 
-// creer liste vide
+// creer liste vide --------------------------------
 t_List *emptyList(void)
 {
 	return NULL;
 }
 
-// tester si liste vide
+// tester si liste vide ----------------------------
 int isEmptyList(t_List *L)
 {
 	return L == NULL;
 }
 
-// calcul taille de la liste
-long lenList(t_List *L)
+// calcul taille de la liste -----------------------
+long nbElement(t_List *L)
 {
-
+	long len = 0;
+	while(L)
+	{
+		len++;
+		L = L->next;
+	}
+	return len;
 }
 
-// Ajouter cellule a une position donnee
+// Ajouter cellule a une position donnee ------------
 t_List *addAt(t_List *L, int data, int pos)
 {
 	t_List *prec = L;
 	t_List *cur = L;
 	t_List *cell = createCell(data);
 
-// cas 1, la liste est vide
+// cas 1, la liste est vide ------------------------
 	if(isEmptyList(L))
 	{
 		return cell;
@@ -51,7 +57,7 @@ t_List *addAt(t_List *L, int data, int pos)
 		return cell;
 	}
 
-// autres cas
+// autres cas -----------------------------------------
 int i = 0;
 	while (i < pos)
 	{
@@ -66,19 +72,26 @@ return L;
 
 }
 
-// effacer cellule (via l'index) a une position donnee
+// effacer cellule (via l'index) a une position donnee ******************
 t_List *freeAt(t_List *L, int pos)
 {
 
 }
 
-// effacer toute la liste
+// effacer toute la liste --------------------------------------
 t_List *freeList(t_List *L)
 {
-
+	t_List*tmp = NULL;
+	while(L)
+	{
+		tmp = L->next;
+		free(L);
+		L = tmp;
+	}
+	return L;
 }
 
-// Afficher la liste
+// Afficher la liste ----------------------------------------
 void printList(t_List *L)
 {
 	while(L)
@@ -92,14 +105,36 @@ void printList(t_List *L)
 	printf("\n");
 }
 
-// recuperer data a une position donnee
+// recuperer data a une position donnee ------------------------
 int getAt(t_List *L, int pos)
 {
-
+	int i = 0;
+	if(isEmptyList(L))
+	{
+		printf("Recherche data : Liste vide\n");
+		return -1;
+	}
+	while(i < pos)
+	{
+		i++;
+		L = L->next;
+	}
+	return L->data;
 }
 
-// modifier data a une position donnee
+// modifier data a une position donnee **********************
 void setAt(t_List *L, int data, int pos)
 {
-
+	int i = 0;
+	if(isEmptyList(L))
+	{
+		printf("Recherche data : Liste vide\n");
+		return;
+	}
+	while(i < pos)
+	{
+		i++;
+		L = L->next;
+	}
+	L->data = data;
 }

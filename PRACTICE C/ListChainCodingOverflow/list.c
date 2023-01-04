@@ -128,7 +128,13 @@ void setAt(t_List *L, int data, int pos)
 	int i = 0;
 	if(isEmptyList(L))
 	{
-		printf("Recherche data : Liste vide\n");
+		printf("Insert data impossible : Liste vide\n");
+		return;
+	}
+	if(pos > nbElement(L))
+	{
+		printf("Erreur ! La position %d est au dela de la liste\n", pos);
+			printf("Indice max liste actuelle : %ld\n", nbElement(L)-1);
 		return;
 	}
 	while(i < pos)

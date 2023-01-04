@@ -42,6 +42,9 @@ setAt(listChain, 1000, 2);
 printf("insert 1000 en indice 2\n");
 	printList(listChain);
 
+setAt(listChain, 1000, 12);
+
+	printf("\nFree list\n");
 
 	listChain = freeList(listChain);
 
@@ -49,6 +52,9 @@ printf("Nombre elements dans la liste : %ld\n", nbElement(listChain));
 
 	printf("la chaine vaut : \n");
 	printList(listChain);
+
+setAt(listChain, 1000, 12);
+
 
 	printf("Liste vide ? Y = 1, no = 0. reponse : %d\n\n", isEmptyList(listChain));
 	printf("data en indice 2 : %d\n", getAt(listChain, 2));

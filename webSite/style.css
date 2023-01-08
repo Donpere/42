@@ -1,0 +1,87 @@
+/*On peut mettre drectement dans le Header le CSS pour la page 
+en utilisant la balise "style"
+-->
+<!--On va utiliser des "selecteurs", par exemple "section"-->
+<!--On peut aussi utiliser des "classes", 
+	elles seront representees par un "." avant le nom de classe-->
+<!--!!! La classe est independante de la balise
+On peut mettre la meme classe dans plusieurs balises differentes-->
+
+<!--On peut rentrer une couleur hexadecimale en mettant "#" devant le code hexa 
+	ex bleu outremer : #04B4AE 
+le code est construit ainsi Rouge Vert Bleu : #RRVVBB de 0 a F
+#FF0000 donne donc du rouge, #0000FF du bleu, etc...*/
+
+/* !!! Ne pas mettre de balise "style" dans la page CSS*/
+
+	body
+	{
+		/* Le navigateur laissera une petite marge par defaut si on ne fait rien
+		ici on va mettre a : 0. Les background toucheront les bords */
+		margin: 0;
+	}
+
+	h1
+	{
+		/*Malheureusement du coup, on a colle le texte du body a gauche,
+		ils vont toucher les bords si on ne fait rien
+		la marge du texte s'appelle le "padding"
+		il faut preciser en quoi, par ex : px pour pixel*/
+		padding-left: 10px;
+
+	}
+
+	div
+	{
+		background-color: gold;
+		
+	}
+
+	.fond-green
+	{
+		background-color: #74CD55;
+	}
+
+	/* !!! les images sont un peu particulieres
+	pour les centrer il faut les mettre entre des balises (section, span, div, etc...0
+	et y appliquer la fonction display: flex puis justify-content:center
+	en revanche on peut leur appliquer directement une taille en px ou %
+	*/
+	img
+	{
+	   width: 600px; 
+	}
+
+	span
+	{
+	   display: flex;
+	   justify-content: center;
+	}
+
+	/*
+	Creer un bouton de nav
+	*/
+
+	.bt_nav
+	{
+	text-align: center;	
+	}
+
+	.bt_nav p
+	{
+		font-size: 2em;
+	}
+
+	.bt_nav a
+	{
+		font-size: 3em;
+
+		background-color: rgb(18, 110, 80);
+		padding: 10px;
+		/*couleur du texte a blanc*/
+		color: #ffffff;
+		/*supprimer le soulignement*/
+		text-decoration: none;
+		/*arrondir les bords du bouton*/
+		border-radius: 20px;
+	}

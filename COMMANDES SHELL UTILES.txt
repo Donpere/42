@@ -1,0 +1,9 @@
+COMMANDES SHELL UTILES
+
+Ouvrir un fichier html dans le navigateur par defaut :
+xdg-open URL
+
+changer le navigateur préféré : 
+xdg-settings set default-web-browser firefox.desktop 
+ou 
+xdg-settings set default-web-browser chromium-browser.desktop

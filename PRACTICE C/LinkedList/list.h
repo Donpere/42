@@ -28,6 +28,6 @@ typedef struct s_listElement
 void ft_putchar(char c);
 void ft_putstr(char *str);
 t_list	newList(void);
-t_bool	IsListEmpty(t_list l);
+t_bool	isListEmpty(t_list l);
 
 #endif

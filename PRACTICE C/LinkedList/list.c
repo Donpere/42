@@ -5,16 +5,14 @@
 
 void ft_putchar(char c)
 {
-	write(c);
-	return;
+	write(1, &c, 1);
 }
 void ft_putstr(char *str);
 {
 	int i;
 	while(str)
-		write(str[i]);
-
-	return;
+		ft_putchar(str[i]);
+		i++;
 }
 
 t_list newList(void)
@@ -22,7 +20,7 @@ t_list newList(void)
 	return NULL;
 }
 
-t_bool IsListEmpty(t_list *l)
+t_bool isListEmpty(t_list *l)
 {
 	if (l == NULL)
 		return true;

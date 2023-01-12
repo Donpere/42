@@ -5,16 +5,26 @@
 
 int main()
 {
-	int a = 0;
+	
+	// ft_putchar('a');
+	// 	ft_putchar('\n');
+
+	// ft_putstr("salut");
+	// 	ft_putchar('\n');
+
+	// ft_putnbr(-543);
+	// 	ft_putchar('\n');
+
+
 
 	t_list *myList;
 
 		isListEmpty(myList);
-
+		
 	myList = creatCell();
 
-		a = isListEmpty(myList);
-		ft_putnbr(a);
+		isListEmpty(myList);
+
 
 
 	return 0;

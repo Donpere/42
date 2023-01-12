@@ -34,7 +34,6 @@ void	ft_putnbr(int nb)
 		ft_putchar('-');
 		nb *= -1;
 	}
-	
 	if (nb >= 10)
 	{
 		ft_putnbr(nb / 10);
@@ -56,12 +55,9 @@ int isListEmpty(t_list* li)
 {
 	if (li == NULL)
 		{
-		ft_putstr("List empty.");
-		ft_putchar('\n');
+		ft_putstr("La liste est vide.");
 		return 1;
 		}
-		
-	ft_putstr("List has elements.");
-	ft_putchar('\n');
+	ft_putstr("Liste contient elements.");
 	return 0;
 }

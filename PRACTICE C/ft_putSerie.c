@@ -27,7 +27,7 @@ void ft_putnbr(int nb)
 	if (nb < 0)
 	{
 		ft_putchar('-');
-		nb = nb*1;
+		nb = nb*(-1);
 	}
 
 	if (nb >= 10)
@@ -46,7 +46,7 @@ int main()
 	int a = 2147483647;
 	char b = 'd';
 	char c[] = "salut";
-
+	int x = __INT_MAX__;
 	ft_putnbr(a);
 		ft_putchar('\n');
 
@@ -54,6 +54,9 @@ int main()
 		ft_putchar('\n');
 
 	ft_putstr(c);
+		ft_putchar('\n');
+
+	ft_putnbr(x);
 		ft_putchar('\n');
 
 	return 0;

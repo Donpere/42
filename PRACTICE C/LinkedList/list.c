@@ -47,7 +47,19 @@ void	ft_putnbr(int nb)
 }
 
 // FONCTIONS LINKED LIST
-t_list *creatCell(void)
+t_list *createCell(int val)
+{
+	t_list *cell = malloc(sizeof(t_list));
+	if(!cell)
+		return NULL;
+	
+	cell->data = val;
+	cell->next = NULL;
+
+	return cell;
+}
+
+t_list *emptyCell(void)
 {
 	return NULL;
 }
@@ -56,12 +68,41 @@ int isListEmpty(t_list* li)
 {
 	if (li == NULL)
 		{
-		ft_putstr("List empty.");
-		ft_putchar('\n');
 		return 1;
 		}
 		
-	ft_putstr("List has elements.");
-	ft_putchar('\n');
 	return 0;
+}
+
+t_list *addCell(t_list *li, int val, int pos)
+{
+	t_list *prec = li;
+	t_list *cur = li;
+	int i = 0;
+	// crea nouvelle cell
+	t_list *newCell = createCell(val);
+
+	// cas 1 : on a une liste vide, on devra l'ajouter en premiere position
+	if(isListEmpty(li))
+		return newCell;
+	
+	// cas 2 liste pas vide & pos a 0 (inutile de coder listEmpty puisqu'elle aura saute le if precedent)
+	// newCell devient alors le pointeur de tete et s'accroche a celle d'apres qui pointe vers NULL
+	// concretement next de newCell contiendra l'adresse de li & li pointe vers NULL
+	if(pos == 0)
+	{
+		newCell->next = li;
+		return newCell;
+	}
+}
+
+// fonctions print
+void printList(t_list *li)
+{
+	while(!isListEmpty(li))
+	{
+		ft_putnbr(li->data);
+		ft_putchar('\n');
+		li = li->next;
+	}
 }

@@ -78,7 +78,27 @@ void printList(t_list * lst)
 }
 
 
+t_list *addEnd(t_list *cur, int val)
+{
+    t_list *suiv = malloc(sizeof(t_list));
+    if(suiv == NULL)
+    {
+        puts("malloc error");
+        return NULL;
+    }
+    suiv->next = NULL;
 
+    while(cur->next != NULL)
+    {
+        cur = cur->next;
+    }
+  //  printf("%p\n", cur->next);
+
+    cur->next = suiv;
+    suiv->data = val;
+    suiv->next = NULL;
+
+}
 
 
 int main()
@@ -105,6 +125,16 @@ int main()
 
 	printList(myList);
 	printf("\n");
+
+	    addEnd(myList, 38);
+
+	    printList(myList);
+	    printf("\n");
+
+    	addEnd(myList, 44);
+
+	    printList(myList);
+	    printf("\n");
 
 	free(myList);
 

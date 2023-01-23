@@ -16,6 +16,8 @@
 
 int isEmpty(t_list *lst)
 {
+	if(lst == NULL)
+		printf("Empty list")
 	return lst == NULL;
 }
 
@@ -28,8 +30,10 @@ t_list *firstCell(t_list *lst, int val)
 		ft_putstr("Malloc error firstCell !");
 		return NULL;
 	}
+
 	fCell->data = val;
 	fCell->next = NULL;
+	
 	return fCell;
 }
 
@@ -93,5 +97,6 @@ t_list *freeList(t_list *lst)
 		free(tmp);
 	}
 	lst = NULL;
+
 	return lst;
 }

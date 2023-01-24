@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: domarion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/06 15:48:50 by domarion          #+#    #+#             */
-/*   Updated: 2023/01/06 15:49:05 by domarion         ###   ########.fr       */
+/*   Created: 2023/01/06 15:59:18 by domarion          #+#    #+#             */
+/*   Updated: 2023/01/06 15:59:28 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
-int	ft_isprint(int c)
+size_t	ft_strlen(const char *s)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	size_t	t;
+
+	t = 0;
+	while (s[t] != '\0')
+		t++;
+	return (t);
 }
+
 /*
 int	main(void)
 {
-	char str [] = "hello";
-	printf("%d\n", ft_isprint(str[5]));
-	printf("%d\n", isprint(str[5]));
+	char str [50] = "hello";
+	printf("%ld\n", ft_strlen(str));
+//	printf("%ld\n", strlen(str));
 	return (0);
-}*/
+}
+*/

@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: domarion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/06 15:48:50 by domarion          #+#    #+#             */
-/*   Updated: 2023/01/06 15:49:05 by domarion         ###   ########.fr       */
+/*   Created: 2023/01/06 15:55:23 by domarion          #+#    #+#             */
+/*   Updated: 2023/01/06 15:55:31 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
-int	ft_isprint(int c)
+void	ft_putendl_fd(char *s, int fd)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	if (fd < 1 || !s)
+		return ;
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
 /*
 int	main(void)
 {
-	char str [] = "hello";
-	printf("%d\n", ft_isprint(str[5]));
-	printf("%d\n", isprint(str[5]));
+	ft_putendl_fd("hello les loulous", 1);
 	return (0);
-}*/
+}
+*/

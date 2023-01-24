@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: domarion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/06 15:48:50 by domarion          #+#    #+#             */
-/*   Updated: 2023/01/06 15:49:05 by domarion         ###   ########.fr       */
+/*   Created: 2023/01/06 15:57:47 by domarion          #+#    #+#             */
+/*   Updated: 2023/01/06 15:57:54 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_strdup(const char *s)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	char	*ds;
+	int		i;
+
+	i = 0;
+	ds = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!ds)
+		return (NULL);
+	while (s[i])
+	{
+		ds[i] = s[i];
+		i++;
+	}
+	ds[i] = '\0';
+	return (ds);
 }
 /*
 int	main(void)
 {
-	char str [] = "hello";
-	printf("%d\n", ft_isprint(str[5]));
-	printf("%d\n", isprint(str[5]));
+	char * s = "hello";
+	printf("%s\n", ft_strdup(s));
 	return (0);
-}*/
+}
+*/

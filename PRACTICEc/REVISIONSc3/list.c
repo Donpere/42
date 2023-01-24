@@ -50,6 +50,7 @@ int addEndCell(t_list *lst, int val)
 	
 	newCell->data = val;
 	newCell->next = NULL;
+	
 	while (lst->next != NULL)
 	{
 		lst = lst->next;

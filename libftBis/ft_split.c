@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: domarion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/06 15:56:40 by domarion          #+#    #+#             */
-/*   Updated: 2023/01/06 15:57:01 by domarion         ###   ########.fr       */
+/*   Created: 2023/01/16 10:26:20 by domarion          #+#    #+#             */
+/*   Updated: 2023/01/16 10:26:31 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ static int	ft_count(char const *s, char c)
 	return (count);
 }
 
-static int	ft_setmalloc(char const *s, char c, char **new)
+static int	ft_setmalloc(char const *s, char c, char **tab)
 {
 	int	i;
 	int	letter;
-	int	tab;
+	int	list;
 
 	i = 0;
-	tab = 0;
+	list = 0;
 	while (s[i] != '\0')
 	{
 		letter = 0;
@@ -51,25 +51,25 @@ static int	ft_setmalloc(char const *s, char c, char **new)
 				letter++;
 				i++;
 			}
-			new[tab] = malloc(sizeof(char) * (letter + 1));
-			if (!new[tab])
+			tab[list] = malloc(sizeof(char) * (letter + 1));
+			if (!tab[list])
 				return (-1);
-			tab++;
+			list++;
 		}
 		else
 			i++;
 	}
-	return (tab);
+	return (list);
 }
 
-static void	ft_filltab(char const *s, char c, char **new)
+static void	ft_filltab(char const *s, char c, char **tab)
 {
 	int	i;
-	int	tab;
+	int	list;
 	int	l;
 
 	i = 0;
-	tab = 0;
+	list = 0;
 	while (s[i] != '\0')
 	{
 		l = 0;
@@ -77,50 +77,71 @@ static void	ft_filltab(char const *s, char c, char **new)
 		{
 			while (s[i] != c && s[i])
 			{
-				new[tab][l] = s[i];
+				tab[list][l] = s[i];
 				l++;
 				i++;
 			}
-			new[tab][l] = '\0';
-			tab++;
+			tab[list][l] = '\0';
+			list++;
 		}
 		else
 			i++;
 	}
 }
 
-static void	ft_free(char **new)
+static void	ft_free(char **tab)
 {
 	int	i;
 
 	i = 0;
-	while (new[i])
+	while (tab[i])
 	{
-		free(new[i]);
+		free(tab[i]);
 			i++;
 	}
-	free(new);
+	free(tab);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**new;
+	char	**tab;
 	int		i;
 
 	if (!s)
 		return (NULL);
 	i = ft_count(s, c);
-	new = malloc((i + 1) * sizeof(char *));
-	if (!new)
+	tab = malloc((i + 1) * sizeof(char *));
+	if (!tab)
 		return (NULL);
-	i = ft_setmalloc(s, c, new);
+	i = ft_setmalloc(s, c, tab);
 	if (i < 0)
 	{
-		ft_free(new);
+		ft_free(tab);
 		return (NULL);
 	}
-	new[i] = 0;
 	if (i > 0)
-		ft_filltab(s, c, new);
-	return (new);
+		ft_filltab(s, c, tab);
+	return (tab);
 }
+// int main()
+// {
+// 	int i = 0;
+// 	char *str = "bla(bli(blou";
+// 	char **tab;
+
+// 	printf("Chaine initiale : %s \n", str);
+// 	tab = ft_split(str, '(');
+
+// 	while(tab[i] != NULL)
+// 	{
+// 		printf("%d : %s\n", i, tab[i]);
+// 		free(tab[i]);
+// 		i++;
+// 	}
+
+// 	free(tab);
+
+// 	printf("\n");
+
+// 	return 0;
+// }

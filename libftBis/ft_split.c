@@ -33,33 +33,33 @@ static int	ft_count(char const *s, char c)
 	return (count);
 }
 
-static int	ft_setmalloc(char const *s, char c, char **tab)
+static int ft_setmalloc(char const *str, char sp, char **tab)
 {
-	int	i;
-	int	letter;
-	int	list;
+	int i;
+	int letter;
+	int line;
 
 	i = 0;
-	list = 0;
-	while (s[i] != '\0')
+	line = 0;
+	while (str[i] != '\0')
 	{
 		letter = 0;
-		if (s[i] != c)
+		if (str[i] != sp)
 		{
-			while (s[i] && s[i] != c)
+			while (str[i] && str[i] != sp)
 			{
 				letter++;
 				i++;
 			}
-			tab[list] = malloc(sizeof(char) * (letter + 1));
-			if (!tab[list])
+			tab[line] = malloc(sizeof(char) * (letter + 1));
+			if (!tab[line])
 				return (-1);
-			list++;
+			line++;
 		}
 		else
 			i++;
 	}
-	return (list);
+	return (line);
 }
 
 static void	ft_filltab(char const *s, char c, char **tab)
@@ -119,6 +119,7 @@ char	**ft_split(char const *s, char c)
 		ft_free(tab);
 		return (NULL);
 	}
+	tab[i] = NULL;
 	if (i > 0)
 		ft_filltab(s, c, tab);
 	return (tab);

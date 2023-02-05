@@ -40,20 +40,20 @@ static int	ft_count(char const *str, char c)
 	return (count);
 }
 
-static int	ft_setmalloc(char const *s, char c, char **tab)
+static int ft_setmalloc(char const *str, char sp, char **tab)
 {
-	int	i;
-	int	letter;
-	int	line;
+	int i;
+	int letter;
+	int line;
 
 	i = 0;
 	line = 0;
-	while (s[i] != '\0')
+	while (str[i] != '\0')
 	{
 		letter = 0;
-		if (s[i] != c)
+		if (str[i] != sp)
 		{
-			while (s[i] && s[i] != c)
+			while (str[i] && str[i] != sp)
 			{
 				letter++;
 				i++;
@@ -144,8 +144,8 @@ char	**ft_split(char const *str, char c)
 		ft_free(tab);
 		return (NULL);
 	}
-	// ???
-	//tab[i] = 0;
+	// fermer la colonne de tab avec NULL
+	tab[i] = NULL;
 	// remplissage des lignes du tableau
 	if (i > 0)
 		ft_filltab(str, c, tab);
@@ -155,7 +155,6 @@ char	**ft_split(char const *str, char c)
 int main()
 {
     int i = 0;
-    int ret;
     char* str = "jexparsxxcommexunxxxroi";
     char** tab;
     

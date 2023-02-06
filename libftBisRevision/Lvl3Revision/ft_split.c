@@ -120,21 +120,23 @@ static void	ft_free(char **tab)
 
 char	**ft_split(char const *str, char c)
 {
-	// mon tableau 
+	// on initie le tableau
+	// et un entier pour numeros de lignes 
 	char	**tab;
-	// mes numeros de lignes
 	int		i;
 	// protection en cas de chaine vide
 	if (!str)
 		return (NULL);
-	// on compte le nbre de mots
-	i = ft_count(str, c);
+
+	// on compte le nbre de mots POUR POUVOIR MALLOC
 	// on malloc le nombre de mots + 1 puisqu'on demarre a 0 :
 	// 4 lignes == 0, 1, 2, 3
+	// SANS OUBLIER gestion erreur malloc tab
+	i = ft_count(str, c);
 	tab = malloc((i + 1) * sizeof(char *));
-	// gestion erreur malloc tab
 	if (!tab)
 		return (NULL);
+
 	// creation de chaque malloc de chaque morceau de chaine
 	i = ft_setmalloc(str, c, tab);
 	// gestion du retour erreur de malloc dans setmalloc
@@ -155,14 +157,15 @@ char	**ft_split(char const *str, char c)
 int main()
 {
     int i = 0;
-    char* str = "jexparsxxcommexunxxxroi";
-    char** tab;
+	char sep = 'x'
+    char *str = "jexparsxxcommexunxxxroi";
+    char **tab;
     
 	// affiche chaine de depart
     printf("Chaine initiale : %s \n",str);
     
 	// stocke le resultat dans le tableau 2 dim "tab"
-    tab = ft_split(str,'x');
+    tab = ft_split(str, sep);
 
     //affichage du resultat, soit chaque mot separes par des "x" 
 	// qui sont copies dans chaque ligne de "tab" sans le separateur

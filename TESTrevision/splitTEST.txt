@@ -4,7 +4,7 @@
 
 ft_count
 // on a BESOIN du nombre de mots pour le nombre de lignes du tableau
-// on cree un compteur pour visiter la string i
+// on cree un COMPTEUR pour visiter la string i
 // et un compteur pour le nombre de mots dans la string
 
 // on visite la string, on cherche la fin de string
@@ -87,32 +87,26 @@ ft_free
 }
 
 
-ft_split
+ft_split CHAR CONST pour la str
 {
-// on initie un tableau 2D
 // on cree un entier pour les numeros de lignes 
+// on initie un tableau 2D
 
-// protection en cas de chaine vide
-
+// protection en cas de chaine str vide
 
 // on compte le nbre de mots pour pouvoir
-// malloc le nombre de mots + 1 puisqu'on demarre a 0 :
+// malloc le tableau
+// protection du malloc
+
+// malloc Ens des lignes avec longueur du mot : i + 1 (on demarre ligne 0) :
 // 4 lignes == 0, 1, 2, 3
-// ON N'OUBLIE PAS gestion erreur malloc tab
-
-
-// creation de chaque malloc de chaque morceau de chaine
-// GESTION DU RETOUR ERREUR DE MALLOC DANS SETMALLOC : si erreur i=(-1)
-// dans ce cas on va free tab pour eviter les fuites
-
+// Gestion du retour "-1" -> erreur malloc dans ft_setmalloc
 
 // fermer la colonne de tab avec NULL pour pouvoir faire while(tab)
 
-
-// ENFIN remplissage des lignes du tableau
+// ENFIN si i > 0 remplissage des lignes du tableau
 
 // fin du split on renvoie l'adresse du tableau finalise
-
 }
 
 

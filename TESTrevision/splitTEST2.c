@@ -92,17 +92,17 @@ static void ft_free(char **tab)
 }
 
 
-char **ft_split(char *str, char sep)
+char **ft_split(char const *str, char sep)
 {
 	int i;
 	char **tab;
 //	
 	if (!str)
-			return (NULL);
+		return (NULL);
 //	
 	i = ft_count(str, sep);
 	tab = malloc((i + 1) * sizeof(char *));
-		if (!tab)
+	if (!tab)
 			return (NULL);
 //
 	i = ft_setmalloc(str, sep, tab);
@@ -112,12 +112,12 @@ char **ft_split(char *str, char sep)
 			return (NULL);
 		}	
 //
-tab[i] = NULL;
+	tab[i] = NULL;
 //
-if (i > 0)
-	ft_filltab(str, sep, tab);
+	if (i > 0)
+		ft_filltab(str, sep, tab);
 //
-return (tab);
+	return (tab);
 }
 
 int main()

@@ -25,8 +25,8 @@ static int ft_count(char const *str, char sep)
 static int ft_setmalloc(char const *str, char sep, char **tab)
 {
 	int i;
-	int letter;
 	int line;
+	int letter;
 
 	i = 0;
 	line = 0;
@@ -40,7 +40,7 @@ static int ft_setmalloc(char const *str, char sep, char **tab)
 				i++;
 				letter ++;
 			}
-			tab[line] = malloc(sizeof(char) * (letter + 1));
+			tab[line] = malloc((letter + 1) * sizeof(char));
 			if (!tab[line])
 				return (-1);
 			line++;

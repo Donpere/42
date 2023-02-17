@@ -59,23 +59,23 @@ int letter;
 
 i = 0;
 line = 0;
-while (str[i])
-{
-	letter = 0;
-	if (str[i] != sep)
+	while (str[i])
 	{
-		while (str[i] && str[i] != sep)
+	letter = 0;
+		if (str[i] != sep)
 		{
-			tab[line][letter] = str[i];
-			letter++;
-			i++;
+			while (str[i] && str[i] != sep)
+			{
+				tab[line][letter] = str[i];
+				letter++;
+				i++;
+			}
+		tab[line][letter] = '\0';
+		line++;
 		}
-	tab[line][letter] = '\0';
-	line++;
+		else
+			i++;
 	}
-	else
-		i++;
-}
 }
 
 static void ft_free(char **tab)
@@ -103,7 +103,7 @@ char **ft_split(char const *str, char sep)
 	i = ft_count(str, sep);
 	tab = malloc((i + 1) * sizeof(char *));
 	if (!tab)
-			return (NULL);
+		return (NULL);
 //
 	i = ft_setmalloc(str, sep, tab);
 		if (i < 0)

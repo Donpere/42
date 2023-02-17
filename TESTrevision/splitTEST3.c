@@ -9,16 +9,16 @@ static int ft_count(char const *str, char sep)
 	i = 0;
 	count = 0;
 	while (str[i])
+	{
+		if (str[i] != sep)
 		{
-			if (str[i] != sep)
-				{
-					count++;
-					while (str[i] && str[i] != sep)
-						i++;
-				}
-			else
+			count++;
+			while (str[i] && str[i] != sep)
 				i++;
 		}
+		else
+			i++;
+	}
 	return (count);
 }
 
@@ -32,13 +32,13 @@ static int ft_setmalloc(char const *str, char sep, char **tab)
 	line = 0;
 	while (str[i])
 	{
-		letter = 0;
 		if (str[i] != sep)
 		{
+			letter = 0;
 			while (str[i] && str[i] != sep)
 			{
-				i++;
 				letter++;
+				i++;
 			}
 			tab[line] = malloc((letter + 1) * sizeof(char));
 			if (!tab[line])
@@ -48,9 +48,8 @@ static int ft_setmalloc(char const *str, char sep, char **tab)
 		else
 			i++;
 	}
-	return (line);
+return (line);
 }
-
 
 static void ft_filltab(char const *str, char sep, char **tab)
 {
@@ -62,17 +61,17 @@ static void ft_filltab(char const *str, char sep, char **tab)
 	line = 0;
 	while (str[i])
 	{
-		letter = 0;
 		if (str[i] != sep)
 		{
+			letter = 0;
 			while (str[i] && str[i] != sep)
 			{
 				tab[line][letter] = str[i];
-				i++;
 				letter++;
+				i++;
 			}
-		tab[line][letter] = '\0';
-		line++;
+			tab[line][letter] = '\0';
+			line++;
 		}
 		else
 			i++;
@@ -100,18 +99,18 @@ char **ft_split(char const *str, char sep)
 	if (!str)
 		return (NULL);
 	i = ft_count(str, sep);
-	tab = malloc((i + 1) * sizeof(char *);
+	tab = malloc((i + 1) * sizeof(char *));
 	if (!tab)
 		return (NULL);
 	i = ft_setmalloc(str, sep, tab);
 	if (i < 0)
-	{
-		ft_free(tab);
-		return (NULL);
-	}
+		{
+			ft_free(tab);
+			return (NULL);
+		}
 	tab[i] = NULL;
 	if (i > 0)
-		ft_filltab(str, sep, tab);	
+		ft_filltab(str, sep, tab);
 	return (tab);
 }
 
@@ -121,13 +120,17 @@ int main()
 	char sep = '+';
 	char *str = "salut+a++toi";
 	char **tab;
+	printf("chaine initiale : %s\n", str);
+
 	tab = ft_split(str, sep);
-	while(tab[i])
+
+	while (tab[i])
 	{
-		printf(tab[i]);
+		printf("chaine %d : %s\n", i, tab[i]);
 		i++;
 	}
-	ft_free(tab)
+
+	ft_free(tab);
 
 	return (0);
 }

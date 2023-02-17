@@ -13,13 +13,11 @@
 //#include "libft.h"
 #include <stdio.h>
 
-// une fonction qui convertit un caractère en majuscule
-void	convert_to_upper(unsigned int i, char *c)
+// une fonction qui affiche l'indice et la valeur de chaque caractère dans une chaîne de caractères
+void	print_char(unsigned int i, char *c)
 {
-	if (*c >= 'a' && *c <= 'z')
-		*c -= 32;
+	printf("Caractere a l'indice %u : %c\n", i, *c);
 }
-
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
@@ -37,13 +35,10 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 int	main(void)
 {
-	char	str[] = "hello, world!";
+	char	str[] = "Hello, world!";
 
-	// appliquer la fonction convert_to_upper a chaque caractere de la chaine str
-	ft_striteri(str, &convert_to_upper);
-
-	// afficher la chaine de caracteres modifiee
-	printf("%s\n", str);
+	// appliquer la fonction print_char a chaque caractere de la chaine str
+	ft_striteri(str, &print_char);
 
 	return (0);
 }

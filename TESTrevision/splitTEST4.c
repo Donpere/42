@@ -1,11 +1,11 @@
-#include "libft.h"
+//#include "libft.h"
 #include <stdlib.h>
 #include <stdio.h>
 
-static int ft_count(char const *str, char sep)
+static int	ft_count(char const *str, char sep)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -16,7 +16,6 @@ static int ft_count(char const *str, char sep)
 			count++;
 			while (str[i] && str[i] != sep)
 				i++;
-
 		}
 		else
 			i++;
@@ -24,25 +23,11 @@ static int ft_count(char const *str, char sep)
 	return (count);
 }
 
-static void ft_free(char **tab)
+static int	ft_setmalloc(char const *str, char sep, char **tab)
 {
-	int line;
-
-	line = 0;
-	while (tab[line])
-	{
-		free(tab[line]);
-		line++;
-	}
-	free(tab);
-
-}
-
-static void ft_filltab(char const *str, char sep, char **tab)
-{
-	int i;
-	int line;
-	int letter;
+	int	i;
+	int	line;
+	int	letter;
 
 	i = 0;
 	line = 0;
@@ -53,36 +38,9 @@ static void ft_filltab(char const *str, char sep, char **tab)
 			letter = 0;
 			while (str[i] && str[i] != sep)
 			{
-				tab[line][letter] = str[i];
 				i++;
 				letter++;
 			}
-			tab[line][letter] = '\0';
-			line++;
-		}
-		else
-			i++;
-	}
-}
-
-static int ft_setmalloc(char const *str, char sep, char **tab)
-{
-	int i;
-	int line;
-	int letter;
-
-	i = 0;
-	line = 0;
-	while (str[i])
-	{
-		if (str[i] != sep)
-		{
-			letter = 0;
-			while (str[i] && str[i] != sep)
-				{
-					letter++;
-					i++;
-				}
 			tab[line] = malloc((letter + 1) * sizeof(char));
 			if (!tab[line])
 				return (-1);
@@ -94,16 +52,56 @@ static int ft_setmalloc(char const *str, char sep, char **tab)
 	return (line);
 }
 
-char **ft_split(char const *s, char c)
+static void	ft_free(char **tab)
 {
-	int i;
-	char **tab;
+	int	line;
 
-	int = 0;
-	if (!str)
+	line = 0;
+	while (tab[line])
+	{
+		free(tab[line]);
+		line++;
+	}
+	free(tab);
+}
+
+static void	ft_filltab(char const *str, char sep, char **tab)
+{
+	int	i;
+	int	line;
+	int	letter;
+
+	i = 0;
+	line = 0;
+	while (str[i])
+	{
+		if (str[i] != sep)
+		{
+			letter = 0;
+			{
+				while (str[i] && str[i] != sep)
+				{
+					tab[line][letter] = str[i];
+					i++;
+					letter++;
+				}
+			}
+			line++;
+		}
+		else
+			i++;
+	}
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		i;
+	char	**tab;
+
+	if (!s)
 		return (NULL);
-	i = ft_count(s, c);
-	tab = malloc((i +1) * sizeof(char *))
+	i = ft_count (s, c);
+	tab = malloc((i + 1) * sizeof(char *));
 	if (!tab)
 		return (NULL);
 	i = ft_setmalloc(s, c, tab);
@@ -114,23 +112,26 @@ char **ft_split(char const *s, char c)
 	}
 	tab[i] = NULL;
 	if (i > 0)
-		ft_filltab(s, c, tab);	
+		ft_filltab(s, c, tab);
 	return (tab);
 }
 
-int main()
-{
-	int i = 0;
-	char sep = '+';
-	char *str = "salut++a+toi";
-	char **tab;
-	printf("chaine initiale : %s\n\n", str);
-	tab = ft_split(str, sep);
-	while(tab[i])
-		{
-		printf("chaine %d : %s\n", i, str[i])
-		i++;
-		}
-	ft_free(tab);
-	return 0;
-}
+// int main()
+// {
+// 	int	i = 0;
+// 	char	 sep = '+';
+// 	char	*str = "salut+a++toi";
+// 	char	**tab;
+
+// 	tab = ft_split(str, sep);
+// 	printf("chaine init : %s\n", str);
+// 	printf("separator : %c\n", sep);
+
+// 	while (tab[i])
+// 		{
+// 			printf("chaine %d : %s\n", i, tab[i]);
+// 			i++;
+// 		}
+// 	ft_free(tab);
+// 	return (0);
+// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: domarion <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: domarion <domarion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:54:22 by domarion          #+#    #+#             */
-/*   Updated: 2023/01/06 15:54:28 by domarion         ###   ########.fr       */
+/*   Updated: 2023/02/22 11:00:10 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	else
 	{
-		while (n-- > 0)
+		while (n > 0)
 		{
-			d[n] = s[n];
+			d[n - 1] = s[n - 1];
 		}
 	}
 	return (dest);
@@ -46,7 +46,7 @@ int	main(void)
 	char d[] = "hello";
 	char s[] = "ab";
 	ft_memmove(d, s, 2);
-//	memmove(d, s, 2);
+	memmove(d, s, 2);
 	printf("%s\n", (d));
 	return (0);
 }*/

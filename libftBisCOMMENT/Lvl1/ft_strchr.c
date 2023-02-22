@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+// localiser et retourner l'adresse d'un caractere 'c' via l'ascii dans une chaine 's'
+// La fonction strchr() renvoie un pointeur sur la première occurrence du caractère c dans la chaîne s. 
+
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
@@ -24,28 +27,20 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-
+/*
 int	main()
 {
 	const char *s;
 	const char *t;
 	char *u;
 	char *v;
-	char str[] = "ellho";
-	s = str;
-	printf(" %p\n", s);
-	s = ft_strchr(str, 'h');
-	printf(" %p\n", s);
-	printf(" %s\n", s);
-	printf(" %s\n", s-2);
-
-
+	s = ft_strchr("hello", 'h');
 	t = strchr("hello", 'h');
-	//printf(" %s\n", s);
-	//printf(" %s\n", t);
+	printf(" %s\n", s);
+	printf(" %s\n", t);
 	u = ft_strchr("hello", 'z');
 	v = strchr("hello", 'z');
-	//printf(" %s\n", u);
-	//printf(" %s\n", v);
+	printf(" %s\n", u);
+	printf(" %s\n", v);
 	return (0);
-}
+}*/

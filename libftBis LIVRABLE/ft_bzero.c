@@ -14,14 +14,14 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*test;
+	char	*init;
 	size_t	i;
 
-	test = (char *)s;
+	init = (char *)s;
 	i = 0;
 	while (i < n)
 	{
-		test[i] = '\0';
+		init[i] = '\0';
 		i++;
 	}
 }

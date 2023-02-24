@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: domarion <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: domarion <domarion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:26:20 by domarion          #+#    #+#             */
-/*   Updated: 2023/01/16 10:26:31 by domarion         ###   ########.fr       */
+/*   Updated: 2023/02/24 10:59:51 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_count(char const *str, char sep)
+static int	ft_count(char const *str, char sep)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -33,11 +33,11 @@ static int ft_count(char const *str, char sep)
 	return (count);
 }
 
-static int ft_setmalloc(char const *str, char sep, char **tab)
+static int	ft_setmalloc(char const *str, char sep, char **tab)
 {
-	int i;
-	int line;
-	int letter;
+	int	i;
+	int	line;
+	int	letter;
 
 	i = 0;
 	line = 0;
@@ -59,14 +59,14 @@ static int ft_setmalloc(char const *str, char sep, char **tab)
 		else
 			i++;
 	}
-return (line);
+	return (line);
 }
 
-static void ft_filltab(char const *str, int sep, char **tab)
+static void	ft_filltab(char const *str, int sep, char **tab)
 {
-int i;
-int line;
-int letter;
+	int	i;
+	int	line;
+	int	letter;
 
 i = 0;
 line = 0;
@@ -89,9 +89,9 @@ line = 0;
 	}
 }
 
-static void ft_free(char **tab)
+static void	ft_free(char **tab)
 {
-	int line;
+	int	line;
 
 	line = 0;
 	while (tab[line])
@@ -124,25 +124,25 @@ char	**ft_split(char const *s, char c)
 		ft_filltab(s, c, tab);
 	return (tab);
 }
-int main()
-{
-	int i = 0;
-	char *str = "bla(bli(blou";
-	char **tab;
+// int main()
+// {
+// 	int i = 0;
+// 	char *str = "bla(bli(blou";
+// 	char **tab;
 
-	printf("Chaine initiale : %s \n", str);
-	tab = ft_split(str, '(');
+// 	printf("Chaine initiale : %s \n", str);
+// 	tab = ft_split(str, '(');
 
-	while(tab[i] != NULL)
-	{
-		printf("%d : %s\n", i, tab[i]);
-		free(tab[i]);
-		i++;
-	}
+// 	while(tab[i] != NULL)
+// 	{
+// 		printf("%d : %s\n", i, tab[i]);
+// 		free(tab[i]);
+// 		i++;
+// 	}
 
-	free(tab);
+// 	free(tab);
 
-	printf("\n");
+// 	printf("\n");
 
-	return 0;
-}
+// 	return 0;
+// }

@@ -1,46 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: domarion <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/06 15:42:08 by domarion          #+#    #+#             */
-/*   Updated: 2023/01/06 15:42:25 by domarion         ###   ########.fr       */
+/*   Created: 2023/01/06 15:58:26 by domarion          #+#    #+#             */
+/*   Updated: 2023/01/06 15:58:33 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	int	neg;
-	int	rslt;
+	char	*dst;
+	size_t	i;
+	size_t	j;
+	size_t	len;
 
 	i = 0;
-	neg = 1;
-	rslt = 0;
-	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	dst = malloc(sizeof(char) * (len + 1));
+	if (!dst)
+		return (NULL);
+	while (s1[i] != '\0')
 	{
-		if (nptr[i] == '-')
-			neg = neg * -1;
+		dst[i] = s1[i];
 		i++;
 	}
-	while (nptr[i] != '\0' && nptr[i] >= '0' && nptr[i] <= '9')
+	while (s2[j] != '\0')
 	{
-		rslt = rslt * 10 + nptr[i] - 48;
-		i++;
+		dst[i + j] = s2[j];
+		j++;
 	}
-	return (rslt * neg);
+	dst[i + j] = '\0';
+	return (dst);
 }
 /*
 int	main(void)
 {
-	char str[500] = "                                ---+--+123dsfkjbdf";
-	printf("%d", ft_atoi(str));
+	char * a = "hello";
+	char * b = "lesloulous";
+	printf("%s\n", ft_strjoin(a, b));
 	return (0);
 }
 */

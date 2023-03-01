@@ -3,12 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: domarion <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: domarion <domarion@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/06 16:02:22 by domarion          #+#    #+#              #
-#    Updated: 2023/01/06 16:02:28 by domarion         ###   ########.fr        #
+#    Updated: 2023/02/25 10:11:05 by domarion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+# les NOMS suivis de = en majuscules sont des variables
 
 SRCS	=		./ft_isalpha.c \
 			./ft_isdigit.c \
@@ -57,17 +59,51 @@ B_SRCS	=		./ft_lstnew.c \
 			./ft_lstiter.c \
 			./ft_lstmap.c \
 
+# pour utiliser une variable, la syntaxe est $ et parentheses : $(variable)
+
 OBJS	=	$(SRCS:%.c=%.o)
 
 B_OBJS	=	$(B_SRCS:%.c=%.o)
 
 NAME	=	libft.a
 
+# le compilateur (cc) est stocke dans une variable : 	CC
 CC		=	cc
 
+# par habitude, la liste des flags sont stockes dans la variable CFLAGS
 CFLAGS	=	-Wall -Wextra -Werror
 
+# la structure de base du MAKEFILE est : 
+#							<cible> (ce que l'on veut creer) : <dependance> (ou conditions a satisfaire)
+#	on fait une tabulation		<commande>			
+
 all:		$(NAME)
+
+# pour decomposer les etapes de compilation. gcc fait appel a un programme gnu asm :
+# 1 - TRAITEMENT COMMANDES PREPROCESSEUR : option gcc -E pour une sortie .i
+# option gcc -E se content de realiser les commandes preprocesseur.
+# elle va supprimer les commentaires, lister les en-tete (#include), lister les structures, 
+# gcc -E <nom fichier (file.c par exemple)> -o fichier.i (option -o pour lui donner un nom) 
+
+# 2 - COMPILATION en LANGAGE ASSEMBLEUR : option gcc -S pour une sortie .s
+# exemple : gcc -S main.c -> main.s
+
+# 3 - ASSEMBLAGE (en fichiers objets) : option gcc -c pour un fichier en .o
+# exemple : gcc -c main.c -> main.o
+
+# 4 - LINKING : gcc sans option sauf -o si on veut specifier un nom d'exe
+# (fusion des fichiers precedents et edition de liens, bibliotheques externes ou personnelles)
+# exemple : gcc main.o fichier.o -o programm (on a donc realise les etapes precedentes,
+# et on peut desormais utiliser les fichiers objets)
+
+# pour l'edition de liens la commande gnu est ld
+
+# l'option -c de gcc compile ou assemble, sans lier les fichiers
+
+# l'option -o de gcc place la sortie de gcc (exe, object, assembled) dans un fichier specifie (-o fileName)
+# si l'option -o n'est pas suivie d'un nom, gcc creera un fichier a.out par defaut
+
+ 
 
 %.o:		%.c
 	$(CC) $(CFLAGS) -c $< -o $(<:%.c=%.o)

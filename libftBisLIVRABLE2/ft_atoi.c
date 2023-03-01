@@ -6,7 +6,7 @@
 /*   By: domarion <domarion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:42:08 by domarion          #+#    #+#             */
-/*   Updated: 2023/02/22 18:46:02 by domarion         ###   ########.fr       */
+/*   Updated: 2023/02/24 16:50:29 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	ft_atoi(const char *nptr)
 	int	i;
 	int	rslt;
 	int	neg;
-
 
 	i = 0;
 	rslt = 0;

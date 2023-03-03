@@ -3,14 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: domarion <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: domarion <domarion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:58:26 by domarion          #+#    #+#             */
-/*   Updated: 2023/01/06 15:58:33 by domarion         ###   ########.fr       */
+/*   Updated: 2023/03/02 11:45:10 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//#include "libft.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+int ft_strlen(char const *str)
+{
+	int i = 0;
+	while(str[i])
+		i++;
+	return i;
+}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -60,12 +70,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	dst[i + j] = '\0';
 	return (dst);
 }
-/*
+
 int	main(void)
 {
 	char * a = "hello";
 	char * b = "lesloulous";
-	printf("%s\n", ft_strjoin(a, b));
+	char *joined;
+	joined = ft_strjoin(a, b);
+	printf("%s\n", joined);
+	free(joined);
 	return (0);
 }
-*/

@@ -3,28 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: domarion <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: domarion <domarion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:56:40 by domarion          #+#    #+#             */
-/*   Updated: 2023/01/06 15:57:01 by domarion         ###   ########.fr       */
+/*   Updated: 2023/03/02 11:26:36 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count(char const *s, char c)
+static int	ft_count(char const *str, char sep)
 {
 	int	i;
 	int	count;
 
 	i = 0;
 	count = 0;
-	while (s[i] != '\0')
+	while (str[i])
 	{
-		if (s[i] != c)
+		if (str[i] != sep)
 		{
 			count++;
-			while (s[i] && s[i] != c)
+			while (str[i] && str[i] != sep)
 				i++;
 		}
 		else
@@ -33,94 +33,116 @@ static int	ft_count(char const *s, char c)
 	return (count);
 }
 
-static int	ft_setmalloc(char const *s, char c, char **new)
+static int	ft_setmalloc(char const *str, char sep, char **tab)
 {
 	int	i;
+	int	line;
 	int	letter;
-	int	tab;
 
 	i = 0;
-	tab = 0;
-	while (s[i] != '\0')
+	line = 0;
+	while (str[i])
 	{
 		letter = 0;
-		if (s[i] != c)
+		if (str[i] != sep)
 		{
-			while (s[i] && s[i] != c)
+			while (str[i] && str[i] != sep)
 			{
+				i++;
+				letter ++;
+			}
+			tab[line] = malloc((letter + 1) * sizeof(char));
+			if (!tab[line])
+				return (-1);
+			line++;
+		}
+		else
+			i++;
+	}
+	return (line);
+}
+
+static void	ft_filltab(char const *str, int sep, char **tab)
+{
+	int	i;
+	int	line;
+	int	letter;
+
+i = 0;
+line = 0;
+	while (str[i])
+	{
+	letter = 0;
+		if (str[i] != sep)
+		{
+			while (str[i] && str[i] != sep)
+			{
+				tab[line][letter] = str[i];
 				letter++;
 				i++;
 			}
-			new[tab] = malloc(sizeof(char) * (letter + 1));
-			if (!new[tab])
-				return (-1);
-			tab++;
-		}
-		else
-			i++;
-	}
-	return (tab);
-}
-
-static void	ft_filltab(char const *s, char c, char **new)
-{
-	int	i;
-	int	tab;
-	int	l;
-
-	i = 0;
-	tab = 0;
-	while (s[i] != '\0')
-	{
-		l = 0;
-		if (s[i] != c)
-		{
-			while (s[i] != c && s[i])
-			{
-				new[tab][l] = s[i];
-				l++;
-				i++;
-			}
-			new[tab][l] = '\0';
-			tab++;
+		tab[line][letter] = '\0';
+		line++;
 		}
 		else
 			i++;
 	}
 }
 
-static void	ft_free(char **new)
+static void	ft_free(char **tab)
 {
-	int	i;
+	int	line;
 
-	i = 0;
-	while (new[i])
+	line = 0;
+	while (tab[line])
 	{
-		free(new[i]);
-			i++;
+		free(tab[line]);
+		line++;
 	}
-	free(new);
+	free(tab);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**new;
+	char	**tab;
 	int		i;
 
 	if (!s)
 		return (NULL);
 	i = ft_count(s, c);
-	new = malloc((i + 1) * sizeof(char *));
-	if (!new)
+	tab = malloc((i + 1) * sizeof(char *));
+	if (!tab)
 		return (NULL);
-	i = ft_setmalloc(s, c, new);
+	i = ft_setmalloc(s, c, tab);
 	if (i < 0)
 	{
-		ft_free(new);
+		ft_free(tab);
 		return (NULL);
 	}
-	new[i] = 0;
+	tab[i] = NULL;
 	if (i > 0)
-		ft_filltab(s, c, new);
-	return (new);
+		ft_filltab(s, c, tab);
+	return (tab);
 }
+// int main()
+// {
+// 	int i = 0;
+// 	char *str = "bla(bli(blou";
+// 	char **tab;
+
+// 	printf("Chaine initiale : %s \n", str);
+// 	tab = ft_split(str, '(');
+
+// 	while(tab[i] != NULL)
+// 	{
+// 		printf("%d : %s\n", i, tab[i]);
+// 		free(tab[i]);
+// 		i++;
+// 	}
+
+// 	free(tab);
+
+// 	printf("\n");
+
+// 	return 0;
+// }

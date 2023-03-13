@@ -107,6 +107,19 @@ ft_strlcpy(a, "bab", 4);
 ft_strlcpy(b, "lol", 4);
 ft_strlcpy(c, "ici", 4);
 
+a[4] = 't';
+
+int i = 0;
+while (a[i])
+{
+    printf("a[%d], %c\n", i, a[i]);
+    i++;
+}
+
+    printf("a[%d], %d\n", i, a[i]);
+    printf("a[%d], %c\n", i, a[4]);
+
+
     lst = ft_lstnew(a);
     printf("%s\n",(char *)lst->content);
 

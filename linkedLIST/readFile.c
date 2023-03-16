@@ -3,13 +3,33 @@
 
 typedef struct s_list
 {
-	int nb;
-	void *next;
+	void			*content;
+	struct s_list	*next;
 
 } t_list;
 
-
-int main(int argc, char **argv)
+t_list *ft_lstnew(void *content)
 {
+	t_list *new;
+
+	new = malloc(sizeof(t_list));
+	if(!new)
+	{
+		printf("Malloc error in ft_lstnew !");
+		return(NULL);
+	}
+	new->content = content;
+	new->next = NULL;
+	
+	return(new);
+}
+
+int main()
+{
+	t_list *lst;
+	int nb = 42;
+
+	lst = ft_lstnew((void*)&nb);
+	printf("%d\n", *((int*)lst->content));
 	return (0);
 }

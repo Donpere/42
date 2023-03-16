@@ -1,0 +1,19 @@
+La syntaxe static void (*affiche(int a))(int) déclare une fonction appelée affiche qui prend un entier a en argument 
+et renvoie un pointeur de fonction qui prend un entier en argument et ne renvoie rien.
+
+Plus en détail, la syntaxe se lit comme suit :
+
+int a: 
+spécifie que la fonction affiche prend un entier a en argument.
+
+(*affiche(int a)): 
+spécifie que la fonction affiche renvoie un pointeur de fonction.
+
+void (*affiche(int a))(int): 
+spécifie que le pointeur de fonction renvoyé par affiche pointe vers une fonction qui prend un entier en argument et ne renvoie rien.
+Ensuite, la définition de la fonction affiche utilise l'argument a pour décider quelle fonction de rappel utiliser. 
+Si a est pair, la fonction renvoie un pointeur de fonction pointant vers affiche_pair, sinon elle renvoie un pointeur de fonction pointant vers affiche_impair.
+
+Le code de cette fonction suggère que affiche_pair et affiche_impair sont deux autres fonctions qui prennent un entier en argument et ne renvoient rien. 
+Selon la valeur de a, la fonction affiche renvoie un pointeur de fonction qui pointe vers l'une de ces deux fonctions. 
+Cela peut être utilisé pour appeler la fonction de rappel appropriée en fonction de la valeur de a.

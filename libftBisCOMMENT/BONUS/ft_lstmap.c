@@ -6,7 +6,7 @@
 /*   By: domarion <domarion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:52:10 by domarion          #+#    #+#             */
-/*   Updated: 2023/03/24 11:32:00 by domarion         ###   ########.fr       */
+/*   Updated: 2023/03/24 17:25:38 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 
 
 #include "libft.h"
+#include <stdlib.h>
 
 int ft_islower(int c)
 {
@@ -53,6 +54,10 @@ void delete(void *content)
 	free(content);
 }
 
+void print_str(char *str)
+{
+	while(str[i] != )
+}
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -92,12 +97,15 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 int main()
 {
-	t_list *lst = NULL;
-	ft_lstadd_back(&lst, ft_lstnew("hello"));
-	ft_lstadd_back(&lst, ft_lstnew("world"));
-	ft_lstadd_back(&lst, ft_lstnew("foo"));
-	ft_lstadd_back(&lst, ft_lstnew("bar"));
-	t_list *new_lst = ft_lstmap(lst, to_upper, delete);
+	t_list *lst = NULL; // creation du pointeur lst (point d'entree liste chainee)
+	ft_lstadd_back(&lst, ft_lstnew("hello")); 	// ajout d'une cellule, le content sera une string "hello"
+	ft_lstadd_back(&lst, ft_lstnew("world")); 	// idem
+	ft_lstadd_back(&lst, ft_lstnew("foo")); 	// idem
+	ft_lstadd_back(&lst, ft_lstnew("bar"));		// idem
+	
+	t_list *new_lst = ft_lstmap(lst, to_upper, delete);	
+	// utilisation de lstmap sur lst en utilisant to_upper (mettra les caracteres en majuscule) puis delete
+	
 	ft_lstiter(new_lst, print_str);
 	ft_lstclear(&lst, delete);
 	ft_lstclear(&new_lst, delete);

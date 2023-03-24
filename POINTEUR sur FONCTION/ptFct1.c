@@ -37,6 +37,8 @@ int main ()
     lst3->content = &a;
 	lst2->content = &b;
 
+	printf("lst3 pt : \t\t\t%p,\nlst3 content pt : \t%p,\n&a : \t\t\t%p,\nlst3 next \t\t\t%p,\nlst4 : \t\t\t%p\n", lst3, lst3->content, &a, lst3->next, lst4);
+
 
        free(lst);
         

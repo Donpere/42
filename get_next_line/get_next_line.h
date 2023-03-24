@@ -13,7 +13,7 @@
 # include <fcntl.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 200
 # endif
 
 typedef struct	s_list

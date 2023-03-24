@@ -6,7 +6,7 @@
 /*   By: domarion <domarion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:42:08 by domarion          #+#    #+#             */
-/*   Updated: 2023/02/24 16:50:29 by domarion         ###   ########.fr       */
+/*   Updated: 2023/03/22 10:49:03 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_atoi(const char *nptr)
 	neg = 1;
 	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
 		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	while (nptr[i] == '+' || nptr[i] == '-')
 	{
 		if (nptr[i] == '-')
 			neg = neg * -1;
@@ -36,11 +36,10 @@ int	ft_atoi(const char *nptr)
 	}
 	return (rslt * neg);
 }
-/*
+
 int	main(void)
 {
-	char str[500] = "                                ---+--+123dsfkjbdf";
+	char str[50] = "     ---+--+2147483648123";
 	printf("%d", ft_atoi(str));
 	return (0);
 }
-*/

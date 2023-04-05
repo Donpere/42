@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: domarion <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: domarion <domarion@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:45:10 by domarion          #+#    #+#             */
-/*   Updated: 2023/01/06 15:45:23 by domarion         ###   ########.fr       */
+/*   Updated: 2023/04/03 10:05:48 by domarion         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	ft_bzero(void *s, size_t n)
 
 	init = (char *)s;
 	i = 0;
+	if (str == NULL)
+		return (0);
 	while (i < n)
 	{
 		init[i] = '\0';

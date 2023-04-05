@@ -6,7 +6,7 @@
 #    By: domarion <domarion@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/06 16:02:22 by domarion          #+#    #+#              #
-#    Updated: 2023/02/25 10:11:05 by domarion         ###   ########.fr        #
+#    Updated: 2023/03/30 09:47:26 by domarion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -125,5 +125,15 @@ bonus:		$(OBJS) $(B_OBJS)
 re:			fclean all
 
 rebonus:	fclean bonus
+
+# En Makefile, la directive .PHONY est utilisée pour indiquer à Make que la cible spécifiée n'est pas un fichier à construire, 
+# mais plutôt une cible qui doit toujours être exécutée, même si un fichier du même nom existe déjà.
+
+# Dans cet exemple, la cible clean est définie comme étant une cible phony. Cela signifie que lorsqu'on invoque make clean, 
+# Make exécutera toujours la commande associée à la cible clean, même si un fichier nommé clean existe déjà dans le répertoire courant.
+
+# En général, il est bon de marquer les cibles qui ne correspondent pas à des fichiers réels comme phony, 
+# afin d'éviter des problèmes potentiels avec des noms de fichiers identiques et 
+# de garantir que ces cibles soient toujours exécutées comme prévu.
 
 .PHONY:		all clean fclean re bonus rebonus

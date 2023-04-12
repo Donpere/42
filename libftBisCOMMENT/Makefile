@@ -6,7 +6,7 @@
 #    By: domarion <domarion@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/06 16:02:22 by domarion          #+#    #+#              #
-#    Updated: 2023/03/30 09:47:26 by domarion         ###   ########.fr        #
+#    Updated: 2023/04/11 16:48:18 by domarion         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,7 +91,7 @@ all:		$(NAME)
 # 3 - ASSEMBLAGE (en fichiers objets) : option gcc -c pour un fichier en .o
 # exemple : gcc -c main.c -> main.o
 
-# 4 - LINKING : gcc sans option sauf -o si on veut specifier un nom d'exe
+# 4 - LINKING : gcc -l bibliotheque, ou gcc sans option sauf -o si on veut specifier un nom d'exe
 # (fusion des fichiers precedents et edition de liens, bibliotheques externes ou personnelles)
 # exemple : gcc main.o fichier.o -o programm (on a donc realise les etapes precedentes,
 # et on peut desormais utiliser les fichiers objets)
@@ -120,7 +120,37 @@ fclean:		clean
 bonus:		$(OBJS) $(B_OBJS)
 	ar rc $(NAME) $(OBJS) $(B_OBJS)
 	ranlib $(NAME)
-	
+
+# "a"r crée, modifie et extrait des fichiers à partir d'archives. 
+# Une archive est un fichier unique contenant une collection d'autres fichiers dans une structure 
+# qui permet de retrouver les fichiers originaux individuels (appelés membres de l'archive).
+# Le contenu, le mode (permissions), l'horodate, le propriétaire et le groupe des fichiers originaux 
+# sont préservés dans l'archive, et peuvent être reconstitués lors de l'extraction.
+
+# GNU ar peut gérer des archives dont les membres ont des noms de n'importe quelle longueur,
+# toutefois elle peut etre limitee par le syst (couramment a 15 caracteres)
+
+# OPTIONS de ar :
+# "rc"
+# "r" Insérer les fichiers membre dans l'archive (avec remplacement). 
+# tous les membres existants au préalable sont supprimés si leur nom correspond à l'un de ceux que l'on ajoute.
+# Si l'un des fichiers nommés dans membre... n'existe pas, ar affiche un message d'erreur, 
+# et laisse inchangé tout membre existant de l'archive qui porte ce nom.
+# Par défaut, les nouveaux membres sont ajoutés à la fin du fichier, 
+
+# "c" : Créer l'archive. 
+# L'archive spécifiée est toujours créée si elle n'existait pas, quand vous demandez une mise à jour. 
+# Mais un avertissement est émis à moins que vous ne spécifiiez à l'avance que vous voulez la créer, en utilisant ce modificateur.
+
+# "ranlib" creation d'une table d'index, si l'archive n'en possede pas.
+# "ar" crée un index des symboles définis dans les modules objets relogeables de l'archive quand vous spécifiez le modificateur s. 
+# Une fois créé, cet index est mis à jour dans l'archive à chaque fois que ar modifie son contenu 
+# (sauf dans le cas de l'opération de mise à jour q). 
+# Une archive disposant d'un tel index accélère l'édition des liens avec la bibliothèque, 
+# et permet aux routines de cette dernière de s'appeler mutuellement quels que soient leurs emplacements respectifs dans l'archive.
+
+# Vous pouvez utiliser nm -s ou nm --print-armap pour lister cette table d'index. 
+# Si l'archive n'en possède pas, une autre forme de ar appelée "ranlib" peut être utilisée pour n'ajouter que la table.
 
 re:			fclean all
 

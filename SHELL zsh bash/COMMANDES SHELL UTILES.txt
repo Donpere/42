@@ -1,0 +1,19 @@
+COMMANDES SHELL UTILES
+
+$ appel variable
+env environnement (contient des variables d'environnement, tel le user, le old qui est le dernier dossier visite etc...)
+on peut donc appeler une variable d'environnement, par exemple : $USERNAME
+
+ARGUMENTS DE LA FONCTION :
+# est le argc : echo $# affiche donc l'indice max, ce qui est le nombre d'arguments puisque $0 est le programme, $1 le premier argument, etc
+
+@ est la liste des arguments, on peut donc afficher cette liste avec : echo $@
+on peut afficher l'argument par son indice : echo $2 affichera le deuxieme argument
+
+Ouvrir un fichier html dans le navigateur par defaut :
+xdg-open URL
+
+changer le navigateur préféré : 
+xdg-settings set default-web-browser firefox.desktop 
+ou 
+xdg-settings set default-web-browser chromium-browser.desktop

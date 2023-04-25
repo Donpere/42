@@ -1,0 +1,10 @@
+exemple de pipe :
+ls -l cree une liste
+wc -l compte le nombre de ligne
+> resultat.txt copie le resultat dans un fichier resultat.txt
+
+la commande bash :
+ls -l | wc -l > resultat.txt 
+
+
+3

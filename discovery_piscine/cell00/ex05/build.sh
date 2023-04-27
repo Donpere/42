@@ -20,5 +20,3 @@ while (( "$i" <= "$#" )); do
     ((i += 1))
 done
 
-echo "Les dossiers ont été créés avec succès!"
-

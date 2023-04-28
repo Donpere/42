@@ -1,0 +1,161 @@
+:root
+{
+	--hauteur-menu: 60px;
+}
+
+header
+{
+	display: flex;
+	height: 60%;
+	justify-content: space-evenly;
+	background-color: pink;
+	padding: 30px;
+
+
+}
+
+.hdtxt
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	color: purple;
+}
+
+.imgh
+{
+	height: 80px;
+	width: auto;
+}
+
+
+
+/*Reset CSS*/
+
+
+nav
+{
+	width: 300px;
+	position: sticky;
+	top: 0px;
+
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 25px;
+		font-weight: bold;
+		color: purple;
+}
+
+nav > ul
+{
+	display: flex;
+	text-align: center;
+	box-shadow: 2px 2px 2px 2px black; /* >droite >bas >flou >size */
+	height: var(--hauteur-menu);
+}
+
+nav ul /* le chevron >  sign s'applique a tous les enfants */
+{
+	list-style-type: none;
+
+}
+
+nav > ul > li
+{
+	background-color: pink;
+	position: relative;
+	height: 100%;
+	flex: 1; /* repartition equitqble des elements de li */
+	
+	
+	float: left;
+	width: 25%;
+	text-align: left;
+	
+}
+
+nav > ul > li > a
+{
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+}
+
+li a /* retirer decoration des liens */
+{
+	text-decoration: none;
+}
+
+.menu-deroulant > a:after /* signifie apres le texte */
+{
+	content: ">";
+	font: 15px;
+	margin-left: 7px;
+	display: inline-block; /* permettra l'animation */
+}
+
+.sous-menu
+{
+	margin-top: var(--hauteur-menu);
+	width: 100%;
+	text-align: left;
+	background-color: pink;
+	border-radius: 2px;
+	overflow: hidden;
+	max-height: 0;
+}
+
+
+
+/*
+nav ul::after
+{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+nav a
+{
+	display: block;
+	text-decoration: none;
+	color: purple;
+	border-bottom: 2px solid transparent;
+	padding: 0px 0px;
+}
+
+
+
+.sous
+{
+	display: none;
+	box-shadow: 0px 1px 2px #CCC;
+	position: absolute;
+	width: 100%;
+}
+nav > ul li:hover .sous
+{
+	display: block;
+}
+.sous li
+{
+	float: none;
+	width: 100%;
+	text-align: left;
+}
+.sous a
+{
+	padding: 0px;
+	border-bottom: none;
+}
+.sous a:hover
+{
+	border-bottom: none;
+	background-color: RGBa(200,200,200,0.1);
+}
+.deroulant > a::after
+{
+	content:" ▼";
+	font-size: 20px;
+}
+*/

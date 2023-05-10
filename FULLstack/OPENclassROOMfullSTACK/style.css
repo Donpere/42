@@ -1,0 +1,12 @@
+.global
+{
+	display: flex;
+	border: solid blue;
+	margin: 1em;
+}
+
+.box
+{
+	border: solid green;
+	margin: 1em;
+}

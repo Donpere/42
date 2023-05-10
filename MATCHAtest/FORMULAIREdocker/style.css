@@ -1,0 +1,49 @@
+#header, #menu, #contenu, #footer 
+{
+	padding:1px 0;
+}
+
+#header 
+{
+	background-color:#FF9900;
+	text-align:center;
+}
+
+#main 
+{
+	max-width:960px;
+	margin:auto;
+}
+
+#menu  
+{
+	float:left;
+	width:40%;
+	height: 200px;
+	background-color:#FF3366;
+}
+
+#contenu 
+{
+	height: 200px;
+	background-color:#9966FF;
+}
+
+#footer 
+{
+	background-color:#669933;
+	text-align:center;
+	clear:both;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1
+{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+label
+{
+	color: aquamarine;
+}
+

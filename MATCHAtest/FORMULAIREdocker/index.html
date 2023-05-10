@@ -11,9 +11,7 @@
 
 </head>
 
-<header>
 
-</header>
 
 
 <!-- Ce code HTML crée un formulaire qui permet à l'utilisateur de saisir son nom, 
@@ -27,37 +25,53 @@
 
 
 <body>
+	<header id="header">
+		<h1>Formulaire MongoDB</h1>
+	</header>
+ 
 
- <h1>Formulaire MongoDB</h1>
-  <form>
-    <label for="nom">Nom :</label>
-    <input type="text" id="nom" name="nom" required><br>
+<div id="main">
 
-    <label for="prenom">Prénom :</label>
-    <input type="text" id="prenom" name="prenom" required><br>
+	<div id="menu">
+		<p>Futur menu</p>
+	</div>
+		
+	<div id="contenu">
+				<form>
 
-    <label for="email">Email :</label>
-    <input type="email" id="email" name="email" required><br>
+					<label for="nom">Nom :</label>
+					<input type="text" id="nom" name="nom" required><br>
 
-    <label for="telephone">Téléphone :</label>
-    <input type="tel" id="telephone" name="telephone" required><br>
+					<label for="prenom">Prénom :</label>
+					<input type="text" id="prenom" name="prenom" required><br>
 
-    <input type="submit" value="Envoyer" onclick="envoyerFormulaire()">
-  </form>
+					<label for="email">Email :</label>
+					<input type="email" id="email" name="email" required><br>
+
+					<label for="telephone">Téléphone :</label>
+					<input type="tel" id="telephone" name="telephone" required><br>
+
+					<input type="submit" value="Envoyer" onclick="envoyerFormulaire()">
+
+				</form>
+	</div>
+
+</div>
 
 
 <!-- lien vers le javascript app.js -->
 
-  <script src="app.js"></script>
-</body>
 
 
-
-
-<footer>
+<footer id="footer">
+	<p>Futur footer</p>
 
 </footer>
 
+
+
+	<script src="app.js"></script>
+</body>
 
 
 </html>

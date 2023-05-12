@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="js">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title id="pDate"></title>
+</head>
+<body>
+	
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+	<div class="my-form">
+
+		<!--
+		 
+		Cet élément permet de créer un label 
+		ou une étiquette pour un autre élément du formulaire, 
+		en l'occurrence ici un champ de saisie numérique (input de type "number"). 
+		L'attribut "for" de l'élément label est utilisé pour lier le label 
+		et le champ de saisie associé. L'attribut "for" contient l'ID de l'élément associé. 
+		Dans cet exemple, l'ID de l'élément associé est "day-input".
+		
+		Ainsi, lorsque l'utilisateur clique sur l'étiquette "Number of days", 
+		le focus est transféré sur le champ de saisie "day-input", 
+		car l'attribut "for" de l'étiquette est lié à l'ID de l'élément de saisie. 
+		Cela améliore l'accessibilité et la convivialité du formulaire.
+		
+		-->
+			<label for="day-input">Number of days</label>
+		
+		<!--
+		
+		La deuxième ligne de ce code HTML crée un élément input. 
+		Cet élément est utilisé pour créer un champ de saisie pour que l'utilisateur puisse 
+		entrer une valeur. Les attributs qui lui sont associés sont les suivants :
+		
+		-> L'attribut id="day-input" : Cet attribut donne un identifiant unique à l'élément input 
+		qui peut être utilisé pour le cibler en JavaScript ou en CSS.
+		
+		-> L'attribut type="number" : Cet attribut spécifie le type de champ d'entrée à afficher 
+		pour l'utilisateur. Dans ce cas, c'est un champ numérique. Associe a input, il ajoute selon
+		les navigateurs des boutons fleche permettant d'incrementer ou desincrementer de 1
+		
+		-> L'attribut min="1" : Cet attribut spécifie la valeur minimale autorisée 
+		pour le champ numérique. Dans ce cas, la valeur minimale est 1.
+		
+		
+		-->
+		
+			<input id="day-input" type="number" min="1">
+			
+		<!--
+		
+		La troisième ligne crée un bouton en utilisant la balise HTML button.
+		
+		Voici une explication détaillée de chaque partie de cette ligne :
+		
+		<button> : c'est la balise de départ pour créer un bouton en HTML.
+		
+		id="calculate-button" : cela définit un identifiant unique pour ce bouton, 
+		ce qui permettra de l'identifier et de le manipuler ultérieurement avec du code JavaScript ou CSS.
+		
+		Calculate! : c'est le texte qui apparaîtra sur le bouton, ici "Calculate!".
+		
+		En résumé, cette ligne crée un bouton avec un texte "Calculate!" 
+		et un identifiant unique "calculate-button".
+		
+		-->
+		
+			<button id="calculate-button">Calculate!</button>
+		
+		
+			<p id="hours"></p>
+			<p id="minutes"></p>
+			<p id="seconds"></p>
+		
+		
+		</div>
+
+
+
+	<script src="js/script.js"></script>
+</body>
+</html>

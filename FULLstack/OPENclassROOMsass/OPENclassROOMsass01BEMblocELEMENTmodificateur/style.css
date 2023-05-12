@@ -1,0 +1,24 @@
+.proj-prev 
+{
+	color: #fff;
+	margin-bottom: .25rem;
+}
+
+.proj-prev__heading 
+{
+	font-size: 4rem;
+	padding-left: 2.5rem;
+	margin: 0;
+	line-height: 6rem;
+}
+
+.proj-prev--mint 
+{
+	background: #15DEA5;
+}
+
+img
+{
+	height: 200px;
+	width: auto;
+}

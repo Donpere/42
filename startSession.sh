@@ -1,19 +1,21 @@
 #!/bin/bash
 
-# Démarrer Discord
-discord &
+
 
 # Démarrer Visual Studio Code
-code &
+#code &
 
-# Démarrer l'explorateur de fichiers
+# # Démarrer l'explorateur de fichiers
 nautilus &
 
-# Démarrer le terminal
-gnome-terminal &
+# # Démarrer le terminal
+# gnome-terminal &
 
-# Démarrer LibreOffice Writer
-libreoffice --writer &
+# # Démarrer LibreOffice Writer
+# libreoffice --writer &
 
-# Démarrer Chrome
-google-chrome &
+# # Démarrer Chrome
+# google-chrome &
+
+# # Démarrer Discord
+# discord &

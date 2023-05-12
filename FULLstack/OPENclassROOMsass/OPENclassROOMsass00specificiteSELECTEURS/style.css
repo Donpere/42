@@ -1,0 +1,27 @@
+.btn 
+{
+	background-color: #001534;
+	color: #15DEA5;
+	padding: 1.5rem;
+}
+
+.btn-wide 
+{
+	width: 50%;
+}
+		
+.btn-rounded 
+{
+	border-radius: 3rem;
+}
+
+/* :hover permet de changer un etat uniquement au survol de la souris  */
+#submit-button:hover
+{
+	background-color: #15DEA5;
+}
+	
+.button 
+{
+	background-color: #DB464B;
+}
